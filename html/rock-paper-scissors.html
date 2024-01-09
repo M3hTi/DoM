@@ -27,7 +27,7 @@
         <p class="js-moves show-result-moves"></p>
         <p class="js-score show-score"></p>
 
-        <button class="reset-button" onclick="
+        <button class="reset-button js-reset-score" onclick="
         score ={
             wins:0,
             losses:0,
@@ -129,6 +129,9 @@
            console.log(buttonToggleElement);
 
             let toggleElement = document.querySelector('.js-toggle');
+
+            let ressetElement = document.querySelector('.js-reset-score');
+
             let isToggle = false;
             
             toggleElement.onclick = function(){
@@ -141,6 +144,8 @@
                         toggle.classList.remove('rps-button');
                         toggle.classList.add('rps-button-toggle');
                     }
+                    ressetElement.classList.remove('reset-button');
+                    ressetElement.classList.add('rest-button-toggle');
                     isToggle = true;
                 }else{
                     document.body.classList.remove('is-toggle');
@@ -151,6 +156,8 @@
                         toggle.classList.remove('rps-button-toggle');
                         toggle.classList.add('rps-button');
                     }
+                    ressetElement.classList.remove('rest-button-toggle');
+                    ressetElement.classList.add('reset-button');
                     isToggle = false;
                 }
             }

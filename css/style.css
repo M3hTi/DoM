@@ -90,3 +90,9 @@ i{
 .i-toggle{
     color: black;
 }
+.rest-button-toggle{
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+}
