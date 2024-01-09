@@ -1,0 +1,92 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding-top: 18px;
+    padding-left: 20px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    background-color: black;
+    color: whitesmoke;
+}
+.subscribe{
+    padding: 10px 15px;
+    margin-bottom: 35px;
+    background-color: lightcoral;
+    color: white;
+    font-weight: bolder;
+    border-radius: 50px;
+    cursor: pointer;
+}
+button{
+    cursor: pointer;
+}
+#amazon{
+    margin-top: 40px;
+}
+input{
+    padding:  8px 4px;
+}
+
+.calculate-button{
+    padding: 10px 8px;
+    background-color: #008000;
+    color: white;
+    font-weight: bolder;
+}
+.is-subscribed{
+    background-color: whitesmoke;
+    color:black
+}
+
+/* NOTE style dadane page rock paper scissors */
+.title{
+    font-weight: bolder;
+    font-size: 25px;
+}
+.image-resize{
+    height: 80px;
+}
+.rps-button{
+    background-color: transparent;
+    border: 3px solid white;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-inline: 8px;
+    margin-bottom: 40px;
+}
+.show-result-moves{
+    font-weight: bolder;
+    font-size: 20px;
+}
+.show-score{
+    margin-top: 80px;
+    font-size: 18px;
+}
+.reset-button{
+    padding: 8px 16px;
+    border: none;
+}
+.is-toggle{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+.rps-button-toggle{
+    border: 3px solid black;
+    background-color: transparent;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-inline: 8px;
+    margin-bottom: 40px;
+}
+i{
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+.i-toggle{
+    color: black;
+}
