@@ -35,59 +35,6 @@
         ">Calculate</button>
         <p class="js-show-total-cost"></p>
     </form>
-    <script>
-        // SECTION - first project
-        // NOTE - tabe avalin project ma
-        function changeSubscribePosition(){
-            let buttonElement = document.querySelector('.js-button-subscribe');
-
-           if(buttonElement.innerHTML === 'Subscribe'){
-                buttonElement.innerHTML = 'Subscribed';
-                buttonElement.classList.add('is-subscribed')
-           }else{
-                buttonElement.innerHTML = 'Subscribe';
-                buttonElement.classList.remove('is-subscribed')
-           }
-        }
-
-
-        // SECTION - third project
-
-
-            function calculator(){
-                let cost = Number((document.querySelector('.js-cost').value) * 100);
-                // console.log( typeof cost);
-
-                if(cost <= 4000){
-                    cost += 1000;
-                }
-
-                document.querySelector('.js-show-total-cost').innerHTML = `cost is: $${cost / 100}`
-                
-
-            }
-            calculator()
-
-
-            function keybordHandler(){
-                if(event.key === 'Enter'){
-                    calculator();
-                }
-            }
-
-
-
-           
-            
-
-
-
-
-
-
-
-
-
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
