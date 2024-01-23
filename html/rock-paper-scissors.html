@@ -11,34 +11,20 @@
     <body>
        <div><i class="fa-solid fa-toggle-off js-toggle"></i></div>
         <p class="title">Rock Paper Scissors</p>
-        <button onclick="
-        playGame('Rock');
-        " class="rps-button js-button-toggle"><img src="/images/rock-emoji.jpg" class="image-resize" alt=""></button>
+        <button class="rps-button js-button-toggle" data-move="Rock"><img src="/images/rock-emoji.jpg" class="image-resize" alt=""></button>
 
-        <button onclick="
-        playGame('Paper');
-        " class="rps-button js-button-toggle"><img src="/images/paper-emoji.jpg" class="image-resize" alt=""></button>
+        <button class="rps-button js-button-toggle" data-move="Paper"><img src="/images/paper-emoji.jpg" class="image-resize" alt=""></button>
 
-        <button onclick="
-        playGame('Scissors');
-        " class="rps-button js-button-toggle"><img src="/images/scissors-emoji.jpg" class="image-resize" alt=""></button>
+        <button class="rps-button js-button-toggle" data-move="Scissors"><img src="/images/scissors-emoji.jpg" class="image-resize" alt=""></button>
 
         <p class="js-result show-result-moves"></p>
         <p class="js-moves show-result-moves"></p>
         <p class="js-score show-score"></p>
 
-        <button class="reset-button js-reset-score" onclick="
-        score ={
-            wins:0,
-            losses:0,
-            ties:0
-        }
-        localStorage.removeItem('score');
-        updateScore();
-        ">Reset Score</button>
+        <button class="reset-button js-reset-score">Reset Score</button>
 
 
-        <script src="/js/script.js"></script>
+        <script src="/js/rock-paper-scissors"></script>
         
     </body>
 </html>

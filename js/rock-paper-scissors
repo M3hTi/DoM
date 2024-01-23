@@ -1,0 +1,145 @@
+
+let score = JSON.parse(localStorage.getItem('score')) || {
+                wins:0,
+                losses:0,
+                ties:0
+            }
+
+           
+           updateScore();
+
+
+            function playGame(playerMove){
+                let computerMove = pickComputerMove();
+
+                let result;
+                if(computerMove === 'Rock'){
+                    if(playerMove === 'Rock'){
+                        result = 'Tie'
+                    }else if(playerMove === 'Paper'){
+                        result = 'You win!'
+                    }else if(playerMove === 'Scissors'){
+                        result = 'You lost!'
+                    }
+                }else if(computerMove === 'Paper'){
+                    if(playerMove === 'Rock'){
+                        result = 'You lost!'
+                    }else if(playerMove === 'Paper'){
+                        result = 'Tie'
+                    }else if(playerMove === 'Scissors'){
+                        result = 'You win!'
+                    }
+                }else if(computerMove === 'Scissors'){
+                    if(playerMove === 'Rock'){
+                        result = 'You win!'
+                    }else if(playerMove === 'Paper'){
+                        result = 'You lost!'
+                    }else if(playerMove === 'Scissors'){
+                        result = 'Tie'
+                    }   
+                }
+
+                if(result === 'You win!'){
+                    score.wins++;
+                }else if(result === 'You lost!'){
+                    score.losses ++;
+                }else{
+                    score.ties ++;
+                }
+
+                localStorage.setItem('score',JSON.stringify(score)); 
+                
+                updateScore();
+
+                document.querySelector('.js-result').innerHTML = result;
+                document.querySelector('.js-moves').innerHTML = `You : <img src="/images/${playerMove}-emoji.jpg" class="image-resize" alt="">
+                - compter : <img src="/images/${computerMove}-emoji.jpg" class="image-resize" alt="">`;
+                
+
+//                 alert(`you picked ${playerMove}, computer picked ${computerMove}, ${result}
+// wins:${score.wins},losses:${score.losses},Ties:${score.ties}`);
+                
+            }
+
+            function updateScore(){
+                document.querySelector('.js-score')
+                    .innerHTML = `wins:${score.wins},losses:${score.losses},Ties:${score.ties}`
+            }
+
+                  
+
+            function pickComputerMove(){
+                let createRandomNumber = Math.random();
+
+                let computerMove;
+
+                if(createRandomNumber >= 0 && createRandomNumber < 1 / 3){
+                    computerMove = 'Rock';
+                }else if(createRandomNumber >= 1 / 3 && createRandomNumber < 2 / 3){
+                    computerMove = 'Paper'
+                }else if(createRandomNumber >= 2 / 3 && createRandomNumber < 1){
+                    computerMove = 'Scissors';
+                }
+                return computerMove;
+            }
+
+
+            
+           let buttonToggleElement = document.querySelectorAll('.js-button-toggle');
+           console.log(buttonToggleElement);
+
+           for (const button of buttonToggleElement) {
+            button.onclick = function(){
+                    const dataMove = button.dataset.move;
+                    // console.log(dataMove);
+                    playGame(dataMove);
+                }
+            
+           }
+
+            
+
+            let ressetElement = document.querySelector('.js-reset-score');
+            ressetElement.onclick = function(){
+                score = {
+                    wins:0,
+                    losses:0,
+                    ties:0
+                }
+                localStorage.setItem('score',JSON.stringify(score));
+                updateScore();
+            }
+
+
+
+            // NOTE: baraye toggle krdne safhe
+            let toggleElement = document.querySelector('.js-toggle');
+            let isToggle = false;
+            
+            toggleElement.onclick = function(){
+                if(!isToggle){
+                    document.body.classList.add('is-toggle');
+                    this.classList.remove('fa-toggle-off');
+                    this.classList.add('fa-toggle-on');
+                    this.classList.add('i-toggle');
+                    for (const toggle of buttonToggleElement) {
+                        toggle.classList.remove('rps-button');
+                        toggle.classList.add('rps-button-toggle');
+                    }
+                    ressetElement.classList.remove('reset-button');
+                    ressetElement.classList.add('rest-button-toggle');
+                    isToggle = true;
+                }else{
+                    document.body.classList.remove('is-toggle');
+                    this.classList.remove('fa-toggle-on');
+                    this.classList.add('fa-toggle-off');
+                    this.classList.remove('i-toggle');
+                    for (const toggle of buttonToggleElement) {
+                        toggle.classList.remove('rps-button-toggle');
+                        toggle.classList.add('rps-button');
+                    }
+                    ressetElement.classList.remove('rest-button-toggle');
+                    ressetElement.classList.add('reset-button');
+                    isToggle = false;
+                }
+            }

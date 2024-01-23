@@ -10,9 +10,7 @@
 <body>
     <!-- NOTE first project -->
     <p>YouTube Subscribe Button</p>
-    <button onclick="
-    changeSubscribePosition();
-    " class="js-button-subscribe subscribe">Subscribe</button>
+    <button class="js-button-subscribe subscribe">Subscribe</button>
 
 
     <!-- SECTION - second project -->
@@ -27,12 +25,8 @@
     <p>Order over 40$ = FREE shipping</p>
 
     <form action="#" >
-        <input type="text" placeholder="Cost of order" class="js-cost" onkeydown="
-        keybordHandler(event);
-        ">
-        <button class="calculate-button" onclick="
-        calculator();
-        ">Calculate</button>
+        <input type="text" placeholder="Cost of order" class="js-cost">
+        <button class="calculate-button js-calculate-button">Calculate</button>
         <p class="js-show-total-cost"></p>
     </form>
     <script src="js/script.js"></script>
